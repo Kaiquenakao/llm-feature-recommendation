@@ -11,8 +11,10 @@ os.environ["PINECONE_API_KEY"]
 def ingest_docs() -> None:
     loader = TextLoader("features.txt")
     documents = loader.load()
-    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+    print(documents)
+    text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0)
     docs = text_splitter.split_documents(documents)
+
 
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
     PineconeVectorStore.from_documents(docs, embeddings, index_name=INDEX_NAME)

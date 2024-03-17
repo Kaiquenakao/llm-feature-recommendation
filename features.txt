@@ -1,0 +1,2 @@
+O modelo de predicao de casa utiliza as seguintes features ["preco", "cor", "quantidade_quartos"]
+O modelo de predicao de titanic utiliza as seguintes features ["classe", "sobreviveu", "idade"]
