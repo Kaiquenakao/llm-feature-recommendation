@@ -38,6 +38,10 @@ def recomendacao(search_text):
     distance_09 = merge[merge["distances"] < 0.9]
 
     features_list = list(set(sum(distance_09['features_utilizada'], [])))
+
+    if features_list == []:
+        features_list = 'Desculpe, não há nenhuma feature plugada que encaixe no seu contexto'
+
     return features_list
 
 def main():
